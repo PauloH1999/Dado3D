@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <title>Dado 3D</title>
+<style>
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-size: 100px;
+    font-family: Sans-Serif;
+}
+
+.box{
+    height: 200px;
+    width: 200px;
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+.cubo{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    transform-style: preserve-3d;
+    transform: rotateX(-30deg) rotateY(40deg);
+    animation: cubo 4s linear infinite;
+}
+
+@keyframes cubo{
+    
+0%{
+    transform: rotateX(-30deg) rotateY(40deg);
+}
+100%{
+    transform: rotateX(-390deg) rotateY(400deg);
+}
+    
+}
+
+span{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(#0f0,#333);
+    transform: rotateY(calc(90deg * var(--i))) translateZ(100px);
+    border: solid 4px #fff;
+}
+
+.top{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(#0f0,#333);
+    transform: rotateX(90deg) translateZ(100px);
+    border: solid 4px #fff;
+}
+.bot{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(#0f0,#333);
+    transform: rotateX(90deg) translateZ(-100px);
+    border: solid 4px #fff;
+}
+
+#lados{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+</style>
+</head>
+<body>
+
+
+<div class="box">
+    
+    <div class="cubo">
+        
+<div id="lados" class="top">1</div>
+        
+<span id="lados" style="--i:0">2</span>
+<span id="lados" style="--i:1">5</span>
+<span id="lados" style="--i:2">3</span>
+<span id="lados" style="--i:3">4</span>
+        
+<div id="lados" class="bot">6</div>
+        
+    </div>
+    
+</div>
+
+
+</body>
+</html>
